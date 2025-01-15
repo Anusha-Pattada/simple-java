@@ -5,7 +5,16 @@
     <groupId>works.buddy.samples</groupId>
     <artifactId>works-with-heroku</artifactId>
     <version>1.0</version>
-    <packaging>war</packaging>
+    <packaging>war</packaging
+
+     <!-- Compiler properties -->
+    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <encoding>UTF-8</encoding>
+    <project.build.sourceEncoding>${encoding}</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>${encoding}</project.reporting.outputEncoding>
+    <project.resources.sourceEncoding>${encoding}</project.resources.sourceEncoding>
+    <archetype.encoding>${encoding}</archetype.encoding>                      
     <dependencies>
         <dependency>
             <groupId>javax.servlet</groupId>
