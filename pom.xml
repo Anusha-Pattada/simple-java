@@ -57,16 +57,7 @@
                 <argLine>--add-opens java.base/java.lang=ALL-UNNAMED</argLine>
             </configuration>
         </plugin>
-    
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <version>2.3</version>
-                <configuration>
-                <argLine>--add-opens java.base/java.lang=ALL-UNNAMED</argLine>
-            </configuration>
-          </plugin>
-          <plugin>
+    <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-war-plugin</artifactId>
             <version>3.3.0</version> <!-- Latest version of the plugin -->
@@ -74,6 +65,13 @@
                 <argLine>--add-opens java.base/java.lang=ALL-UNNAMED</argLine>
             </configuration>
         </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                <argLine>--add-opens java.base/java.lang=ALL-UNNAMED</argLine>
+            </configuration>
                 <executions>
                     <execution>
                         <phase>package</phase>
