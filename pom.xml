@@ -65,6 +65,15 @@
                 <configuration>
                 <argLine>--add-opens java.base/java.lang=ALL-UNNAMED</argLine>
             </configuration>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>3.3.0</version> <!-- Latest version of the plugin -->
+           <configuration>
+                <argLine>--add-opens java.base/java.lang=ALL-UNNAMED</argLine>
+            </configuration>
+        </plugin>
                 <executions>
                     <execution>
                         <phase>package</phase>
