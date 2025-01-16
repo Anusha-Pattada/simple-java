@@ -22,7 +22,7 @@ pipeline {
                     sh """
                     curl --upload-file ${WAR_FILE} \
                         --user ${TOMCAT_USER}:${TOMCAT_PASS} \
-                        ${TOMCAT_URL}/manager/deploy?path=/yourappname&update=true
+                        ${TOMCAT_URL}/manager/html/webapp
                     """
 
                     // Option 2: Direct file copy to Tomcat (if Tomcat is running locally or has shared folder)
