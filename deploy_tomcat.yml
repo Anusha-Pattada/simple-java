@@ -1,0 +1,15 @@
+# File: deploy_tomcat.yml
+
+---
+- hosts: tomcat_servers
+  become: true
+  tasks:
+    - name: Copy WAR file to Tomcat webapps folder
+      copy:
+        src: target/hello-world-java-app.war
+        dest: /opt/tomcat/webapps/hello-world-java-app.war
+
+    - name: Restart Tomcat service
+      service:
+        name: tomcat
+        state: restarted
