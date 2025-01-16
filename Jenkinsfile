@@ -16,20 +16,7 @@ pipeline {
         }
    stage('Deploy to Tomcat') {
             steps {
-                script {
-                    // Option 1: Deploy using Tomcat Manager API
-                    // Using curl to upload the WAR to Tomcat via the Manager API
-                    sh """
-                    curl --upload-file ${WAR_FILE} \
-                        --user ${TOMCAT_USER}:${TOMCAT_PASS} \
-                        ${TOMCAT_URL}/manager/deploy?path=/yourappname&update=true
-                    """
-
-                    // Option 2: Direct file copy to Tomcat (if Tomcat is running locally or has shared folder)
-                    // sh """
-                    // scp ${WAR_FILE} user@your-tomcat-server:/path/to/tomcat/webapps/
-                    // """
-                }
+                deploy adapters: [tomcat9(credentialsId: 'Tomcat_username_password', path: '', url: 'http://10.0.2.15:9090')], contextPath: null, war: '**/*.war'
             }
         }
 
